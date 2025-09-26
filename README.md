@@ -31,44 +31,44 @@ Audit Azure **RBAC** and **PIM** assignments across a subscription (and all chil
 All subscriptions, CSV per subscription, EU-friendly delimiter, verbose tracing:
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId-or-domain>" -OutDir .\rbac_findings -ExcelFriendly -Verbose
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -OutDir .\rbac_findings -ExcelFriendly -Verbose
 ```
 
 Single subscription by **Id**:
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenant>" -Subscription "00000000-0000-0000-0000-000000000000" -OutDir .\rbac_findings
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -Subscription "00000000-0000-0000-0000-000000000000" -OutDir .\rbac_findings
 ```
 
 Single subscription by **Name**:
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenant>" -Subscription "Production Subscription" -OutDir .\rbac_findings
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -Subscription "Production Subscription" -OutDir .\rbac_findings
 ```
 
 **XLSX** outputs:
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenant>" -OutDir .\rbac_findings -OutputFormat Xlsx
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -OutDir .\rbac_findings -OutputFormat Xlsx
 ```
 
 **Combined** file (extension auto-adjusts to chosen format):
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenant>" -OutputFormat Xlsx -CombinedCsv .\rbac_all.csv
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -OutputFormat Xlsx -CombinedCsv .\rbac_all.csv
 # -> writes .\rbac_all.xlsx
 ```
 
 Tighten policy with **approved admin groups**:
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenant>" -ApprovedAdminGroupIds "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -ApprovedAdminGroupIds "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
 ```
 
 Validation mode (**flag everyone**):
 
 ```powershell
-.\Get-AzRbacPimFindings.ps1 -Tenant "<tenant>" -TestMode
+.\Get-AzRbacPimFindings.ps1 -Tenant "<tenantId>" -TestMode
 ```
 
 ---
